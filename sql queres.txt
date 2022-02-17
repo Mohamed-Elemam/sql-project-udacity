@@ -1,0 +1,80 @@
+1. What is the most popular media type?
+------------------------------------------
+SELECT MediaType.Name , count(Track.mediatypeid) "number of media"
+FROM Track
+JOIN MediaType ON Track.MediaTypeId = MediaType.MediaTypeId
+GROUP BY MediaType.name ORDER BY "number of media" DESC LIMIT 5;
+---------------------------------------------------------------------------
+2. what is the artist with the most albums ?
+------------------------------------------------
+SELECT Artist.Name , count(Album.ArtistId) "Albums number"
+FROM Album
+JOIN artist ON album.ArtistId=Artist.ArtistId
+GROUP BY artist.name ORDER BY "Albums number" DESC LIMIT 10 ;
+--------------------------------------------------------------------------
+3. what is the most popular genre ?
+-------------------------------------------
+SELECT Genre.Name , count(Track.GenreId) "Tracks per genre"
+FROM Genre
+JOIN Track on Genre.GenreId=Track.GenreId
+GROUP by Genre.Name ORDER by "Tracks per genre" DESC LIMIT 10;
+
+---------------------------------------------------------------------------
+4. what is the playlist with the most tracks ?
+----------------------------------------------
+SELECT Playlist.Name , count(PlaylistTrack.TrackId) "Number of tracks"
+FROM PlaylistTrack
+JOIN Playlist on Playlist.PlaylistId=PlaylistTrack.PlaylistId
+GROUP by Playlist.Name ORDER by "Number of tracks" DESC LIMIT 10;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
